@@ -7,8 +7,6 @@
   "author": "Sylvain Desvé <sylvain.desve@gmail.com>",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "precommit": "npm run all && git add ./docs",
-    "all": "npm-run-all prettier lint build doc:*",
     "clean": "npm-run-all clean:*",
     "clean:build": "rm -Rf lib",
     "clean:doc": "rm -Rf ./docs/*",
@@ -26,6 +24,18 @@
     "preversion": "npm run lint",
     "postversion": "git push && git push --tags"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm-run-all doc:* && git add ./docs"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "tslint --fix -c tslint.json",
+      "prettier --write",
+      "git add"
+    ]
+  },
   "files": [
     "doc",
     "lib",
@@ -39,6 +49,8 @@
     "@types/webpack": "^4.39.8",
     "awesome-typescript-loader": "^5.2.1",
     "chai": "^4.2.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
     "mocha": "^6.2.2",
     "npm-run-all": "^4.1.5",
     "nyc": "^14.1.1",
