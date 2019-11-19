@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./lib",
+    "strictFunctionTypes": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "resolveJsonModule": true,
+    "lib": ["es7"],
+    "baseUrl": "./src",
+    "paths": {
+      "typescript-library-boilerplate": ["."]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
