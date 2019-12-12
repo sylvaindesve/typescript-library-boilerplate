@@ -3,5 +3,6 @@
     "include": ["src/**"],
     "reporter": [
       "html"
-    ]
+    ],
+    "report-dir": "./reports/coverage"
 }

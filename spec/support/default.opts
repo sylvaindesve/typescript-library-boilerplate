@@ -2,3 +2,5 @@
 --require tsconfig-paths/register
 --require source-map-support/register
 --recursive
+--reporter mochawesome
+--reporter-options reportDir=reports/tests,reportFilename=index
