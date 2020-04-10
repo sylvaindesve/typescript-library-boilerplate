@@ -3,7 +3,8 @@ import path = require("path");
 import * as webpack from "webpack";
 import * as pkg from "./package.json";
 
-const banner = `/**
+const banner = `#!/usr/bin/env node
+/**
  * ${pkg.name} v${pkg.version}
  * ${pkg.description}
  * Author: ${pkg.author}
@@ -13,7 +14,7 @@ module.exports = {
   mode: "production",
   entry: "./src/index.ts",
   output: {
-    filename: `${pkg.name}.js`,
+    filename: `${pkg.name}`,
     path: path.resolve(__dirname, "dist"),
     globalObject: "this",
     library: pkg.name,
@@ -27,5 +28,5 @@ module.exports = {
     rules: [{ test: /\.tsx?$/, loader: "awesome-typescript-loader" }]
   },
 
-  plugins: [new webpack.BannerPlugin(banner)]
+  plugins: [new webpack.BannerPlugin({ banner, raw: true })]
 };

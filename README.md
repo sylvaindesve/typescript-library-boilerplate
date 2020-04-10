@@ -20,6 +20,7 @@ After cloning you should change the following pieces of code:
 
 * `package.json`
   - `name`
+  - `bundle` script
 * `tsconfig.json`
   - `compilerOptions.paths`
 * `typedoc.js`

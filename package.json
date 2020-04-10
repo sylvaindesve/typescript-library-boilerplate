@@ -13,7 +13,7 @@
     "clean:doc": "rm -Rf ./docs/*",
     "clean:reports": "rm -Rf ./reports",
     "build": "npm run clean:build && tsc",
-    "bundle": "webpack",
+    "bundle": "webpack && chmod +x ./dist/typescript-library-boilerplate",
     "doc": "npm run clean:doc && npm-run-all doc:*",
     "doc:generate": "typedoc",
     "doc:add-theme": "printf 'theme: jekyll-theme-cayman' > ./docs/_config.yml",
