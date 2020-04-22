@@ -10,7 +10,12 @@ module.exports = function(config) {
     testRunner: "mocha",
     mochaOptions: {
       spec: ["./spec/**/*.spec.ts"],
-      opts: "./spec/support/default.stryker.opts"
+      recursive: true,
+      require: [
+        "ts-node/register",
+        "tsconfig-paths/register",
+        "source-map-support/register"
+      ]
     },
     coverageAnalysis: "off",
     tsconfigFile: "tsconfig.json",
