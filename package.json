@@ -20,7 +20,7 @@
     "lint": "tslint -c tslint.json \"src/**/*.ts\"",
     "lint:fix": "tslint --fix -c tslint.json \"src/**/*.ts\"",
     "prettier": "prettier --write \"{src,spec}/**/*.ts\"",
-    "test": "nyc mocha --opts spec/support/default.opts \"spec/**/*.spec.ts\"",
+    "test": "nyc mocha \"spec/**/*.spec.ts\"",
     "test:mutate": "stryker run",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
