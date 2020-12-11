@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "module": "commonjs",
     "declaration": true,
     "outDir": "./lib",
@@ -10,7 +10,6 @@
     "noImplicitThis": true,
     "suppressImplicitAnyIndexErrors": true,
     "resolveJsonModule": true,
-    "lib": ["es7"],
     "baseUrl": "./src",
     "paths": {
       "typescript-library-boilerplate": ["."]
